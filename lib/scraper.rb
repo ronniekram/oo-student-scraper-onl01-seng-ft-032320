@@ -37,15 +37,14 @@ class Scraper
     end
 
   #profile quote
-    profile_page.css('div.main-wrapper .profile.vitals-text-container').each do |quote|
-      profile_info[:quote] = quote.css('div.profile-quote').text
+    profile_info[:quote] = profile_page.css('div.main-wrapper.profile .vitals-text-container .profile-quote').text
     end
 
   #bio
   
-    profile_page.css('div.main-wrapper.profile .description-holder').each do |bio|
-      profile_info[:quote] = bio.css('p').text
-    end  
+    profile_info[:quote] = profile_page.css('div.main-wrapper.profile .description-holder').text
+    end 
+    
     profile_info  
   end
 
