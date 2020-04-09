@@ -42,7 +42,6 @@ class Scraper
   #bio
   
     profile_info[:quote] = profile_page.css('div.main-wrapper.profile .description-holder').text
-    end 
     
     profile_info  
   end
