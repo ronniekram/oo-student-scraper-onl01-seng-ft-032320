@@ -37,11 +37,11 @@ class Scraper
     end
 
   #profile quote
-    profile_info[:quote] = profile_page.css('div.main-wrapper.profile .vitals-text-container .profile-quote').text
+    profile_info[:profile_quote] = profile_page.css('div.main-wrapper.profile .vitals-text-container .profile-quote').text
 
   #bio
   
-    profile_info[:quote] = profile_page.css('div.main-wrapper.profile .description-holder').text
+    profile_info[:bio] = profile_page.css('div.main-wrapper.profile .description-holder').text
     
     profile_info  
   end
