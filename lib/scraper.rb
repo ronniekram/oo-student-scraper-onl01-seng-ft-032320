@@ -24,7 +24,7 @@ class Scraper
     html = open(profile_url)
     profile_page = Nokogiri::HTML(html)
     #social media links
-    profile_page.css('div.main-wrapper.profile.social-icon-container a').each do |media|
+    profile_page.css('div.main-wrapper.profile .social-icon-container a').each do |media|
       if media.attribute('href').value.include? ('twitter')
         profile_info[:twitter] = media.attribute('href').value
       elsif media.attribute('href').value.include? ('linkedin')
@@ -37,13 +37,13 @@ class Scraper
     end
 
   #profile quote
-    profile_page.css('div.main-wrapper.profile.vitals-text-container').each do |quote|
+    profile_page.css('div.main-wrapper .profile.vitals-text-container').each do |quote|
       profile_info[:quote] = quote.css('div.profile-quote').text
     end
 
   #bio
   
-    profile_page.css('div.main-wrapper.profile.description-holder').each do |bio|
+    profile_page.css('div.main-wrapper.profile .description-holder').each do |bio|
       profile_info[:quote] = bio.css('p').text
     end  
     profile_info  
