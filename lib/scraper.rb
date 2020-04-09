@@ -41,7 +41,7 @@ class Scraper
 
   #bio
   
-    profile_info[:bio] = profile_page.css('div.main-wrapper.profile .description-holder').text
+    profile_info[:bio] = profile_page.css('div.main-wrapper.profile .description-holder p').text
     
     profile_info  
   end
